@@ -9,16 +9,16 @@ export default class CalendarService extends ApiService {
   };
 
   getCalendarForMonth = queryParams => {
-    return this.getCalendar(config.path.CALENDAR_MONTH, queryParams);
+    return this.getCalendar(config.path.CALENDAR, queryParams);
   };
 
-  getCalendarForYear(queryParams) {
-    return this.getCalendar(queryParams);
-  }
+  getCalendarForYear = (queryParams) => {
+    return this.getCalendar(config.path.CALENDAR, queryParams);
+  };
 
-  getEventForDay(queryParams) {
-    return this.getCalendar(queryParams);
-  }
+  getEventForDay = (queryParams) => {
+    return this.getCalendar(config.path.CALENDAR, queryParams);
+  };
 
   createEvent(body) {
     return this.post(config.path.EVENT, body)

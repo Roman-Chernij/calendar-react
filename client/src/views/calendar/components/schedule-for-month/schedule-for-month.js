@@ -1,30 +1,27 @@
 import React, { useCallback } from 'react';
-import { CalendarServiceConsumer } from '../../../../component/calendar-service-context';
-import compose from '../../../../utils/compose';
 import { connect } from 'react-redux'
-import useHttp from '../../../../hooks/useHttp';
-import { convertParamsToQueryString } from '../../../../utils';
+import moment from 'moment';
+import { useHttp } from '../../../../hooks';
+import { convertParamsToQueryString, compose } from '../../../../utils';
+import { CalendarServiceConsumer } from '../../../../component/calendar-service-context';
+import { Loader } from '../../../../component/loader/loader';
+import { MonthCalendar } from '../../../../component/calendar-view';
+import { Container } from '../../../../component/container/container';
 
 const ScheduleForMonth = props => {
   const { date, fetchData } = props;
-  const newDate = new Date(date);
-  const dateString = `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`
-  const getData = useCallback(() => fetchData(convertParamsToQueryString({date: dateString, calendar: 'month'})), [fetchData, dateString]);
-  const result = useHttp(getData);
-
-
-  return(
-    <div>month page</div>
-  )
+  const getData = useCallback(() => fetchData(convertParamsToQueryString({date, calendar: 'month'})), [fetchData, date]);
+  const { loading, data } = useHttp(getData);
+  return loading ? <Container><MonthCalendar data={data} /></Container> : <Loader />
 };
 
 const mapMethodToProps = service => ({
   fetchData: service.getCalendarForMonth
 });
 
-const mapStateToProps = ({date}) => ({date});
+const mapStateToProps = ({date}) => ({date: moment(date).format('YYYY-MM-DD')});
 
 export default compose(
   CalendarServiceConsumer(mapMethodToProps),
-  connect(mapStateToProps)
+  connect(mapStateToProps),
 )(ScheduleForMonth)

@@ -12,6 +12,7 @@ const useHttp = requestFunc => {
 
   useEffect( () => {
     let canSaving = true;
+    setstate(initialState);
     requestFunc()
       .then(result => {
         if (!canSaving) return;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import compose from '../../utils/compose';
 import { connect } from 'react-redux';
 import Navigation from '../navigation/Navigation';

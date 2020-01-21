@@ -36,6 +36,9 @@ $sidebar-admin-width: 250;
 $padding-container: 1rem;
 $main-container: 2rem;
 
+$container-max-width: 1000px;
+$container-padding: 0 1.5rem;
+
 /*
 * colors
 */
@@ -72,64 +75,7 @@ $form-control-font-size: $paragraph-font-size;
 $form-control-color: $gray-900;
 $form-control-padding: .375rem .75rem;
 $form-control-background-color: $white;
-$form-control-border: 1px solid $gray-500;
 $form-label-font-size: $paragraph-font-size;
 $form-label-margin-bottom: .5rem;
-$form-help-text-font-size: 1.3rem;
 
 
-$button-padding: 1.3rem 1rem;
-$button-font-size: 1.6rem;
-$button-font-weight: 400;
-$button-line-height: 1.5;
-$button-border-radius: .7rem;
-$button-border: 1px solid transparent;
-$button-primary-background-color: $primary-color;
-$button-primary-background-color-hover: darken($button-primary-background-color, 13%);
-$button-primary-border-color: $button-primary-background-color;
-$button-primary-border-color-hover: $button-primary-background-color-hover;
-
-$sidebar-width: 23rem;
-$sidebar-background-color: #3a4651;
-$header-height: 7rem;
-$header-background-color: #d7dde4;
-
-/*
-*    content-grid
-*/
-
-$content-grid-item-padding: 1.5rem;
-$content-grid-item-background-color: $white;
-
-/*
-*    title block
-*/
-
-$title-font-size: 2rem;
-$title-padding: 0 0 1rem;
-$title-margin: 0 0 $main-container;
-$title-divider-height: 1px;
-$title-divider-background-color: $primary-color;
-
-
-/*
-*    content-title
-*/
-$content-title-font-size: 1.5rem;
-$content-title-padding: 0 #{$content-grid-item-padding} 1rem;
-$content-title-margin: 0 #{-$content-grid-item-padding} #{$main-container / 2};
-$content-title-divider-height: $title-divider-height;
-$content-title-divider-background-color: darken($title-divider-background-color, 30%);
-
-
-/*
-*     profile
-*/
-$profile-list-actions-padding: 1rem 1.5rem;
-$profile-list-actions-font-size: 1.5rem;
-$profile-list-actions-background-color: $gray-300;
-
-/*
-*     modal
-*/
-$modal-background-color: rgba($gray-400, .2);
