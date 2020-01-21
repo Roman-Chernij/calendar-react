@@ -1,0 +1,94 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+}
+
+html, body {
+  min-height: 100vh;
+  font: #{$basis-font-size}px/$basis-line-height $basis-font-family;
+}
+
+body {
+  min-width: #{$basis-min-width-window}px;
+  color:$black;
+  background-color: $secondary-color;
+}
+
+button,
+[type=reset],
+[type=submit],
+[type=image],
+a {
+  -webkit-transition: background-color #{$transitionTime}s, color #{$transitionTime}s;
+  transition: background-color #{$transitionTime}s, color #{$transitionTime}s;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+textarea {
+  border: none;
+  display: block;
+  width: 100%;
+  font-size: $form-control-font-size;
+  padding: $form-control-padding;
+  background-color: $form-control-background-color;
+  color: $form-control-color;
+
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+
+label {
+  display: block;
+  font-size: $form-label-font-size;
+  margin-bottom: $form-label-margin-bottom;
+}
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 1px dotted;
+    outline-color: inherit;
+  }
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+p {
+  margin: 0;
+  font-size: $paragraph-font-size;
+}

@@ -1,0 +1,32 @@
+
+
+.root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.schedule-month-container {
+  flex: 1 0 auto;
+}
+
+.align {
+
+  &-center {
+    @include display-flex(center);
+  }
+
+  &-right {
+    @include display-flex(flex-end);
+  }
+
+  &-left {
+    @include display-flex(flex-start);
+  }
+}

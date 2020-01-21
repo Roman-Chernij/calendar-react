@@ -1,0 +1,135 @@
+$mobileM: 480;
+$mobile:  767;
+$tabletM: 992;
+$tablet:  1023;
+$laptop:  1440;
+
+$width-value:'max-width';
+
+$mobileMPoint: (#{$width-value} : #{$mobileM}px);
+$mobilePoint:  (#{$width-value} : #{$mobile}px);
+$tabletMPoint: (#{$width-value} : #{$tabletM}px);
+$tabletPoint:  (#{$width-value} : #{$tablet}px);
+$laptopPoint:  (#{$width-value} : #{$laptop}px);
+
+$urlFont:'../fonts';
+$urlImage:'../images/';
+
+/*
+* font-family
+*/
+
+$primary-font-family: 'Ubuntu Condensed';
+$secondary-font-family: 'Oswald';
+
+$basis-font-size:10;
+$basis-color: #1c1c1c;
+$basis-line-height: 1.375;
+$basis-min-width-window: 320;
+$basis-font-family: $primary-font-family, 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+
+$paragraph-font-size: 1.6rem;
+
+$transitionTime: .3s;
+$sidebar-width: 300;
+$sidebar-admin-width: 250;
+$padding-container: 1rem;
+$main-container: 2rem;
+
+/*
+* colors
+*/
+//$primary-color: #0275d8;
+$primary-color: #52bcd3;
+$secondary-color: #eceff1;
+$warning-color: #D32F2F;
+$danger-color: #D50000;
+$success-color: #00C853;
+$success2-color: #4CAF50;
+$white: #f9f9f9;
+$black: #121212;
+$gray-300: #E0E0E0;
+$gray-400: #BDBDBD;
+$gray-500: #ccc;
+$gray-900: #55595c;
+
+$blue-500: #667380;
+
+/*
+* z-index
+*/
+$z-index-max: 100;
+
+$auth-background-color: $blue-500;
+$auth-container-width: 45rem;
+$auth-header-padding: 2rem;
+$auth-header-title-font-size: 2.6rem;
+$auth-body-padding: 3rem 5rem;
+
+$form-padding: 2rem;
+$form-group-margin-bottom: 1.5rem;
+$form-control-font-size: $paragraph-font-size;
+$form-control-color: $gray-900;
+$form-control-padding: .375rem .75rem;
+$form-control-background-color: $white;
+$form-control-border: 1px solid $gray-500;
+$form-label-font-size: $paragraph-font-size;
+$form-label-margin-bottom: .5rem;
+$form-help-text-font-size: 1.3rem;
+
+
+$button-padding: 1.3rem 1rem;
+$button-font-size: 1.6rem;
+$button-font-weight: 400;
+$button-line-height: 1.5;
+$button-border-radius: .7rem;
+$button-border: 1px solid transparent;
+$button-primary-background-color: $primary-color;
+$button-primary-background-color-hover: darken($button-primary-background-color, 13%);
+$button-primary-border-color: $button-primary-background-color;
+$button-primary-border-color-hover: $button-primary-background-color-hover;
+
+$sidebar-width: 23rem;
+$sidebar-background-color: #3a4651;
+$header-height: 7rem;
+$header-background-color: #d7dde4;
+
+/*
+*    content-grid
+*/
+
+$content-grid-item-padding: 1.5rem;
+$content-grid-item-background-color: $white;
+
+/*
+*    title block
+*/
+
+$title-font-size: 2rem;
+$title-padding: 0 0 1rem;
+$title-margin: 0 0 $main-container;
+$title-divider-height: 1px;
+$title-divider-background-color: $primary-color;
+
+
+/*
+*    content-title
+*/
+$content-title-font-size: 1.5rem;
+$content-title-padding: 0 #{$content-grid-item-padding} 1rem;
+$content-title-margin: 0 #{-$content-grid-item-padding} #{$main-container / 2};
+$content-title-divider-height: $title-divider-height;
+$content-title-divider-background-color: darken($title-divider-background-color, 30%);
+
+
+/*
+*     profile
+*/
+$profile-list-actions-padding: 1rem 1.5rem;
+$profile-list-actions-font-size: 1.5rem;
+$profile-list-actions-background-color: $gray-300;
+
+/*
+*     modal
+*/
+$modal-background-color: rgba($gray-400, .2);
