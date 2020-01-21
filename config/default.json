@@ -1,0 +1,9 @@
+{
+  "port": 5000,
+  "google_client_id": "1083698541471-5703ogj8p88oavjitevmb46c5fpfdahu.apps.googleusercontent.com",
+  "google_client_secret": "G5HJyzyBzDUbfX3yP8fLwFlW",
+  "mongo_uri": "mongodb+srv://Black:qwerty123@cluster0-bmeic.mongodb.net/app?retryWrites=true&w=majority",
+  "app_url": "http://localhost:5000",
+  "jwt_secret_key": "test",
+  "jwt_time_live": 6000
+}
