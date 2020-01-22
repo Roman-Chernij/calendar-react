@@ -4,13 +4,29 @@ import moment from 'moment';
 import { CalendarServiceConsumer } from '../../../../component/calendar-service-context';
 import { convertParamsToQueryString, compose } from '../../../../utils';
 import { useHttp } from '../../../../hooks';
+import { Loader } from '../../../../component/loader/loader';
+import { Container } from '../../../../component/container/container';
+import { YearCalendar } from '../../../../component/calendar-view';
 
 const ScheduleForYear = props => {
   const {date, fetchData} = props;
   const getData = useCallback(() => fetchData(convertParamsToQueryString({date, calendar: 'year'})), [fetchData, date]);
-  const result = useHttp(getData);
+  const { loading, data, error } = useHttp(getData);
+
+  const layoutLoading = () => <Loader />;
+  const layoutData = () => (
+    <Container>
+      <YearCalendar data={data} />
+    </Container>
+  );
+  const layoutError = () => <Loader />;
   return (
-    <div>year page</div>
+    <>
+      { !loading && layoutLoading() }
+      { loading && layoutData() }
+      { error && layoutError() }
+    </>
+
   )
 };
 

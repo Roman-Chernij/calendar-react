@@ -19,7 +19,10 @@ module.exports.getCalendar = async (req, res) => {
   } else if (calendar === 'year') {
     result = getCalendarFullYear(currentDate)
   } else {
-    result = getCalendarFullMonth(currentDate)
+    result = {
+      monthName: null,
+      schedule:  getCalendarFullMonth(currentDate)
+    }
   }
   setTimeout(() => res.status(200).json(result), 5000)
 

@@ -1,6 +1,36 @@
 
+.year-calendar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+
+  &__item {
+    width: 33.3%;
+    padding: 0 1rem 2rem;
+
+    .disabled {
+      display: none;
+    }
+
+    .month-calendar-row__item {
+      width: 14%;
+    }
+
+    .month-calendar-row__btn {
+      width: 100%;
+      height: 100%;
+      font-size: 1.5rem;
+    }
+  }
+}
+
 .month-calendar {
   font-size: 2rem;
+
+  .month-name {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 
   &-row {
     display: flex;
