@@ -20,8 +20,6 @@ module.exports = app => {
     "/auth/google/callback",
     passport.authenticate("google"),
     (req, res) => {
-      console.log('user', req.user._id)
-      console.log('user', req.user.googleId)
       const jwt_secret_key = config.get('jwt_secret_key')
       const jwt_time_live = config.get('jwt_time_live')
       const token = jwt.sign({

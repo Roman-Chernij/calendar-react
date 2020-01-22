@@ -29,6 +29,7 @@ export default class AuthService extends ApiService {
   };
 
   logout = async () => {
+    console.log('<<<<<< logout >>>>>>')
     this.deleteToken();
   };
 }

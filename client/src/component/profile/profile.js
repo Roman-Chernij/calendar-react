@@ -8,9 +8,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Typography from '@material-ui/core/Typography';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 import PermContactCalendarRoundedIcon from '@material-ui/icons/PermContactCalendarRounded';
+import { compose } from '../../utils';
+import { AuthServiceConsumer } from '../auth-service-context';
 
-const Profile = ({history}) => {
-
+const Profile = ({ history, logout }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = event => {
@@ -24,6 +25,11 @@ const Profile = ({history}) => {
   const jumpToAccountPage = () => {
     handleClose();
     history.push('/account')
+  };
+
+  const logOut = () => {
+    handleClose();
+    logout();
   };
 
   return (
@@ -50,7 +56,7 @@ const Profile = ({history}) => {
             Profile
           </Typography>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={logOut}>
           <ListItemIcon>
             <ExitToAppRoundedIcon fontSize="large"/>
           </ListItemIcon>
@@ -63,4 +69,8 @@ const Profile = ({history}) => {
   )
 };
 
-export default withRouter(Profile);
+const mapMethodToProps = service => ({
+  logout: service.logout
+});
+
+export default compose(withRouter, AuthServiceConsumer(mapMethodToProps))(Profile);

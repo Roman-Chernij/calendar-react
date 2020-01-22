@@ -5,23 +5,20 @@ import { BasicLayout } from './views/BasicLayout';
 import { AuthServiceConsumer } from './component/auth-service-context';
 import compose from './utils/compose';
 
-function App(props) {
-// function App({isAuth}) {
-  // const [status, trigger] = useState(isAuth());
-  const [status, trigger] = useState(true);
+function App({isAuth}) {
+  const [status, trigger] = useState(isAuth());
 
-  // const listenToken = () => {
-  //   trigger(isAuth())
-  // };
+  const listenToken = () => {
+    trigger(isAuth())
+  };
 
   useEffect(() => {
-    console.log('add event')
-    // window.addEventListener('storage', listenToken)
-  });
-  useEffect(() => () => {
-    console.log('remove event')
-    // window.removeEventListener('storage', listenToken)
-  });
+    trigger(isAuth());
+    window.addEventListener('storage', listenToken)
+    return () => {
+      window.removeEventListener('storage', listenToken)
+    }
+  }, []);
 
   const publicRouter = () => (
     <>
@@ -33,9 +30,7 @@ function App(props) {
 
   return (
     <Switch>
-      {
-        status ? privetRouter() : publicRouter()
-      }
+      { true ? privetRouter() : publicRouter() }
     </Switch>
   );
 }
@@ -43,7 +38,6 @@ function App(props) {
 const mapMethodToProps = service => ({
   isAuth: service.isAuthorized,
 });
-
 
 export default compose(
   AuthServiceConsumer(mapMethodToProps),

@@ -1,22 +1,16 @@
 import React from 'react';
-import Toolbar from "@material-ui/core/Toolbar";
-import AppBar from "@material-ui/core/AppBar";
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { CalendarServiceProvider } from '../component/calendar-service-context';
 import { DayPage } from './calendar/pages/day-page/day-page';
 import { MonthPage } from './calendar/pages/month-page/month-page';
 import { YearPage } from './calendar/pages/year-page/year-page';
-import Profile from '../component/profile/profile';
 import { Account } from './calendar/pages/account/account';
+import { AppToolbar } from '../component/app-toolbar/app-toolbar';
 
 export const BasicLayout = () => {
   return (
     <>
-      <AppBar position="static">
-        <Toolbar className="align-right">
-          <Profile />
-        </Toolbar>
-      </AppBar>
+      <AppToolbar />
       <main className="main">
         <CalendarServiceProvider>
           <Switch>
