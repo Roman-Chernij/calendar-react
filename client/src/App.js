@@ -26,11 +26,16 @@ function App({isAuth}) {
       <Redirect to="/login" />
     </>
   );
-  const privetRouter = () => <Route exact render={ props => <BasicLayout {...props} />} />;
+  const privetRouter = () => (
+    <>
+      <Route path="/" render={ props => <BasicLayout {...props} />} />
+      <Route exact path="/login" render={ props => <Login {...props} /> }  />
+    </>
+  );
 
   return (
     <Switch>
-      { true ? privetRouter() : publicRouter() }
+      { status ? privetRouter() : publicRouter() }
     </Switch>
   );
 }
