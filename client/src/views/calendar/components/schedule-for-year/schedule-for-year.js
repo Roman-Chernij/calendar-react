@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { CalendarServiceConsumer } from '../../../../component/calendar-service-context';
+import { CalendarServiceConsumer } from '../../../../component/hoc-helpers';
 import { convertParamsToQueryString, compose } from '../../../../utils';
 import { useHttp } from '../../../../hooks';
 import { Loader } from '../../../../component/loader/loader';

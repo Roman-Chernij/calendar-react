@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { CalendarServiceProvider } from '../component/calendar-service-context';
+import { CalendarServiceProvider } from '../component/hoc-helpers';
 import { DayPage } from './calendar/pages/day-page/day-page';
 import { MonthPage } from './calendar/pages/month-page/month-page';
 import { YearPage } from './calendar/pages/year-page/year-page';

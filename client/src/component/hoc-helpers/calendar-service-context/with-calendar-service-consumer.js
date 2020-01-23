@@ -1,5 +1,5 @@
 import React from 'react';
-import { mapServiceMethodToProps } from '../../utils';
+import { mapServiceMethodToProps } from '../../../utils';
 
 export const withCalendarServiceConsumer = Consumer => mapMethodToProps => Wrapped => {
 

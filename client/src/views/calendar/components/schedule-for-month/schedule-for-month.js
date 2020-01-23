@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import moment from 'moment';
 import { useHttp } from '../../../../hooks';
 import { convertParamsToQueryString, compose } from '../../../../utils';
-import { CalendarServiceConsumer } from '../../../../component/calendar-service-context';
+import { CalendarServiceConsumer } from '../../../../component/hoc-helpers';
 import { Loader } from '../../../../component/loader/loader';
 import { MonthCalendar } from '../../../../component/calendar-view';
 import { Container } from '../../../../component/container/container';

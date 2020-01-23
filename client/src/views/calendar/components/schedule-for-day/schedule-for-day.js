@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { CalendarServiceConsumer } from '../../../../component/calendar-service-context';
+import { CalendarServiceConsumer } from '../../../../component/hoc-helpers';
 import { compose, convertParamsToQueryString } from '../../../../utils';
 import { connect } from 'react-redux';
 import moment from 'moment';

@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import ErrorBoundary from './component/error-boundary/error-boundary';
 import ThemeWrapper from './component/theme-wrapper/theme-wrapper';
-import { AuthServiceProvider } from './component/auth-service-context'
+import { AuthServiceProvider } from './component/hoc-helpers'
 
 import store from './store';
 

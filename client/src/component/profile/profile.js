@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 import PermContactCalendarRoundedIcon from '@material-ui/icons/PermContactCalendarRounded';
 import { compose } from '../../utils';
-import { AuthServiceConsumer } from '../auth-service-context';
+import { AuthServiceConsumer } from '../hoc-helpers';
 
 const Profile = ({ history, logout }) => {
   const [anchorEl, setAnchorEl] = useState(null);

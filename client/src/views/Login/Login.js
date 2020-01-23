@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Button from '@material-ui/core/Button';
-import { AuthServiceConsumer } from '../../component/auth-service-context';
+import { AuthServiceConsumer } from '../../component/hoc-helpers';
 import queryString from 'query-string';
 
 import './login.scss';

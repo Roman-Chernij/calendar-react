@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import Login from './views/Login/Login';
 import { BasicLayout } from './views/BasicLayout';
-import { AuthServiceConsumer } from './component/auth-service-context';
+import { AuthServiceConsumer } from './component/hoc-helpers';
 import compose from './utils/compose';
 
 function App({isAuth}) {
