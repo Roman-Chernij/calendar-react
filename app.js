@@ -4,6 +4,7 @@ const { urlencoded, json } = require('body-parser');
 require('./service/passport-google-oauth20');
 // const authRouters = require('./routers/auth');
 const eventCalendarRouters = require('./routers/event-calendar');
+const profileRouters = require('./routers/profile');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(require('cors')( {
 app.use(passport.initialize());
 require('./routers/auth')(app);
 app.use('/api/calendar', eventCalendarRouters);
+app.use('/api/profile', profileRouters);
 
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));

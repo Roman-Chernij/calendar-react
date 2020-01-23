@@ -15,7 +15,7 @@ export const MonthCalendar = props => {
     <div className="month-calendar">
       { monthName && layoutMonthName() }
       {
-        Array.isArray(schedule) && schedule.map(item => <MonthRowCalendar key={Math.random()} row={item} />)
+        (schedule && Array.isArray(schedule)) && schedule.map(item => <MonthRowCalendar key={Math.random()} row={item} />)
       }
     </div>
   )

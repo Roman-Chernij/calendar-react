@@ -6,4 +6,6 @@ router.get('/', getProfile);
 router.patch('/', updateProfile);
 router.delete('/', deleteProfile);
 
+module.exports = router;
+
 

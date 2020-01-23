@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import Login from './views/Login/Login';
-import { BasicLayout } from './views/BasicLayout';
-import { AuthServiceConsumer } from './component/hoc-helpers';
+import BasicLayout from './views/BasicLayout';
+import { AuthServiceConsumer, ProfileServiceProvider } from './component/hoc-helpers';
 import compose from './utils/compose';
 
 function App({isAuth}) {
@@ -34,9 +34,11 @@ function App({isAuth}) {
   );
 
   return (
-    <Switch>
-      { status ? privetRouter() : publicRouter() }
-    </Switch>
+    <ProfileServiceProvider>
+      <Switch>
+        { status ? privetRouter() : publicRouter() }
+      </Switch>
+    </ProfileServiceProvider>
   );
 }
 

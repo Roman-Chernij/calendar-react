@@ -5,6 +5,7 @@ const initialState = {
   date: moment().format(),
   formatDate: 'dddd DD',
   formatMonth: 'MMMM [,] YYYY',
+  user: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -39,6 +40,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         date: moment(state.date).add(-1, 'year').format(),
+      };
+    case types.SET_PROFILE:
+      return {
+        ...state,
+        user: action.user || {},
       };
     default:
       return state

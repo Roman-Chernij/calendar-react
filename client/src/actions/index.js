@@ -12,11 +12,17 @@ const NEXT_YEAR = () => ({type: types.NEXT_YEAR});
 
 const PREV_YEAR = () => ({type: types.PREV_YEAR});
 
+const actions = {
+  [types.SET_PROFILE]: (user = null) => ({type: types.SET_PROFILE, user})
+};
+
+export const getActionsByType = type => type ? actions[type] : null;
+
 export {
   NEXT_DAY,
   PREV_DAY,
   NEXT_MONTH,
   PREV_MONTH,
   NEXT_YEAR,
-  PREV_YEAR
+  PREV_YEAR,
 }

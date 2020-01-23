@@ -7,7 +7,17 @@ const defaultUser = {
   picture: 'https://lh5.googleusercontent.com/-uMPshretLsU/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reVWO36lpY-ZhVVDgVq1C1vMwQcOg/photo.jpg',
   email: 'dumpoftheworld@gmail.com',
   email_verified: true,
-  displayingFormatTime: 'H:mm A'
+  displaying: {
+    year: 'YYYY',
+    monthByYear: '',
+    month: 'MMMM [,] YYYY',
+    day: 'ddd [,] MMMM DD [,] YYYY',
+    time: {
+      hour: 'H',
+      minute: 'mm',
+      periodOfDay: 'A'
+    }
+  }
 };
 
 module.exports.getProfile = async (req, res) => {
