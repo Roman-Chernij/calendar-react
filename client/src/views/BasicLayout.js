@@ -35,6 +35,7 @@ const BasicLayout = ({ getProfile, ...rest }) => {
             <Route exact path="/month" render={() => <MonthPage />} />
             <Route exact path="/year" render={() => <YearPage />} />
             <Route exact path="/day" render={() => <DayPage />} />
+            <Route exact path="/day/:date" render={() => <DayPage />} />
             <Route exact path="/account" render={() => <Account />} />
             <Redirect to={{pathname: '/month'}} />
           </Switch>

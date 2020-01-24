@@ -1,5 +1,5 @@
 import React from 'react';
-import { MonthRowItemCalendar } from './month-row-item-calendar';
+import MonthRowItemCalendar from './month-row-item-calendar';
 
 export const MonthRowCalendar = props => {
   const { row } = props;

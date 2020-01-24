@@ -1,0 +1,25 @@
+.form {
+
+  &-text-field {
+    width: 100%;
+    display: block;
+    font-size: 2rem;
+
+    label {
+      font-size: 1.6rem;
+      z-index: 1;
+    }
+
+    input {
+      background-color: transparent;
+    }
+
+    .MuiInputBase-root {
+      font-size: 1.7rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}

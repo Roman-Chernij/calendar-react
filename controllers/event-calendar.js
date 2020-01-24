@@ -24,7 +24,7 @@ module.exports.getCalendar = async (req, res) => {
       schedule:  getCalendarFullMonth(currentDate)
     }
   }
-  setTimeout(() => res.status(200).json(result), 5000)
+  res.status(200).json(result)
 
   // if (queryParams && queryParams.date) {
   //   console.log('date', queryParams.date)
