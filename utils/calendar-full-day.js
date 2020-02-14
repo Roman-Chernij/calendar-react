@@ -8,18 +8,13 @@ function getCalendarFullDay(currentDate) {
 }
 
 function createCalendarForDay(startDay, endDay) {
-  const timePm = [];
-  const timeAm = [];
+  const time = [];
   while (endDay.isAfter(startDay, 'hour')) {
     const TimeClone = startDay.add(1, 'hour').clone();
     const timeCurrentFormat = TimeClone.format('H:mm A')
-    if (TimeClone.format('H') >= 12 ) {
-      timePm.push(timeCurrentFormat)
-    } else {
-      timeAm.push(timeCurrentFormat)
-    }
+    time.push(timeCurrentFormat);
   }
-  return [timePm, timeAm]
+  return time
 }
 
 module.exports = {

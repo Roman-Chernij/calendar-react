@@ -78,6 +78,17 @@
   }
 }
 
+.time-list {
+  font-size: 1.6rem;
+
+  &__item {
+
+    &:not(:last-child) {
+      margin-bottom: 1.3rem;
+    }
+  }
+}
+
 @keyframes pulse {
   0% {
     transform: translate(-50%, -50%) scale(0.9);

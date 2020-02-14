@@ -49,8 +49,6 @@ const SettingDisplayingTime = ({ time }) => {
     return isChangeHour && isChangeMinute && isChangePeriodOfDay
   };
 
-  const saveChanges = () => {}
-
   if (!time) {
     return null
   }

@@ -5,29 +5,28 @@ import { compose, convertParamsToQueryString } from '../../../../utils';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { useHttp } from '../../../../hooks';
-import { EventModal } from '../event-modal/event-modal';
+import { Loader } from '../../../../component/loader/loader';
+import { Container } from '../../../../component/container/container';
+import { DayCalendar } from '../../../../component/calendar-view';
 
 const ScheduleForDay = props => {
-  const { date, fetchData, match } = props;
+  const {date, fetchData} = props;
   const getData = useCallback(() => fetchData(convertParamsToQueryString({date, calendar: 'day'})), [fetchData, date]);
-  const result = useHttp(getData);
-  console.log(props)
+  const {data, loading} = useHttp(getData);
 
-
-
-
-  return (
-    <>
-      <EventModal />
-    </>
-  )
+  const view = (loading && data) ?
+    <Container>
+      <DayCalendar data={data}/>
+    </Container> :
+    <Loader/>;
+  return view
 };
 
 const mapMethodToProps = service => ({
   fetchData: service.getEventForDay
 });
 
-const mapStateToProps = ({ date }) => ({
+const mapStateToProps = ({date}) => ({
   date: moment(date).format('YYYY-MM-DD')
 });
 

@@ -31,7 +31,7 @@ const useHttp = requestFunc => {
         })
       });
     return () => canSaving = false;
-  }, [requestFunc]);
+  }, [requestFunc, initialState]);
 
   return ({...state})
 };
